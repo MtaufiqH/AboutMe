@@ -15,4 +15,11 @@
         android:text="@string/my_name"
         android:textAlignment="center" />
 
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/yellow_star"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
 </LinearLayout>
