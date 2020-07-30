@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     // it's automaticly create by Android Studio
     private lateinit var binding: ActivityMainBinding
 
+    // reference data name from @MyName class
+    private val myname: MyName = MyName("M. Taufiq Hidayat")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,6 +33,9 @@ class MainActivity : AppCompatActivity() {
          * nickname = findViewById(R.id.nickname_id)
          * doneButton = findViewById(R.id.button_done)
          */
+
+        // access the name of @MyName data class
+        binding.myName = myname
 
 
 
@@ -50,7 +56,8 @@ class MainActivity : AppCompatActivity() {
     // will show nickname in the UI
     private fun addNickname(view: View) {
         with(binding) {
-            nicknameId.text = nicknameEdit.text.toString()
+            myName?.nickname = nicknameEdit.text.toString()
+            invalidateAll()
             nicknameId.visibility = View.VISIBLE
             nicknameEdit.visibility = View.GONE
             view.visibility = View.GONE
